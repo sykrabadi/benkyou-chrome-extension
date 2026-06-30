@@ -1,0 +1,13 @@
+{
+  "name": "Benkyou!",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "benkyou.html",
+    "default_icon": "benkyou.png"
+  },
+  "host_permissions": [
+    "http://localhost:8230/*"
+  ]
+}

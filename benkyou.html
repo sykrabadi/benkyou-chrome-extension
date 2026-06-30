@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            width: 320px;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #1A1A1A ;
+            border: #2E2E2E 25px ;
+            border-radius: 25px;
+            color: #F0EEEA;
+        }
+
+        label{
+            color: #8C8C8C ;
+        }
+
+        input[type=number] {
+            text-align: left;
+            display: block;
+            width: 100%;
+        }
+
+        #start-button{
+            background-color: #C0392B ;
+            border: #2E2E2E 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            padding: 5px 10px;
+        }
+
+        #pertanyaan{
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="settings-screen">
+        <div>
+            <label for="questions">Total Questions</label>
+            <input type="number" id="total-questions">
+        </div>
+        <div>
+            <label for="intervals">Intervals Between Questions (minutes)</label>
+            <input type="number" id="intervals">
+        </div>
+        <button id="start-button">
+            Start
+        </button>
+    </div>
+
+
+    <div id="quiz-screen">
+        <h1 id="pertanyaan"></h1>
+
+        <div id="container">
+            <ul id="answer-container" style="display: flex;">
+
+            </ul>
+            <div id="feedback" style="display: none;">
+                <p id="correct-reading"></p>
+                <p id="meaning"></p>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
