@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body{
+        body {
             width: 320px;
             padding: 10px;
             box-sizing: border-box;
-            background-color: #1A1A1A ;
-            border: #2E2E2E 25px ;
+            background-color: #1A1A1A;
+            border: #2E2E2E 25px;
             border-radius: 25px;
             color: #F0EEEA;
         }
 
-        label{
-            color: #8C8C8C ;
+        label {
+            color: #8C8C8C;
         }
 
         input[type=number] {
@@ -24,8 +24,8 @@
             width: 100%;
         }
 
-        #start-button{
-            background-color: #C0392B ;
+        #start-button {
+            background-color: #C0392B;
             border: #2E2E2E 10px;
             border-radius: 10px;
             cursor: pointer;
@@ -34,18 +34,25 @@
             padding: 5px 10px;
         }
 
-        #pertanyaan{
+        #pertanyaan {
             text-align: center;
             font-size: 3rem;
         }
 
-        ul{
+        ul {
             list-style: none;
             padding: 0;
             text-align: center;
             display: flex;
             flex-direction: column;
             row-gap: 5px;
+        }
+
+        #settings-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
     </style>
 </head>
@@ -57,8 +64,8 @@
             <input type="number" id="total-questions">
         </div>
         <div>
-            <label for="intervals">Intervals Between Questions (minutes)</label>
-            <input type="number" id="intervals">
+            <input type="radio" id="n5Level" name="level" value="n5" checked>
+            <label for="n5Level">N5</label>
         </div>
         <button id="start-button">
             Start

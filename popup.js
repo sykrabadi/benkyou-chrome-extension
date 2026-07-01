@@ -1,7 +1,7 @@
-async function getKanji() {
+async function getKanjiByLevel(level) {
   try {
     // replace with real HTTP API URL
-    let baseURL = ""
+    let baseURL = `BASE_URL${level}`
     const response = await fetch(baseURL);
 
     if (!response.ok) {
@@ -46,12 +46,17 @@ async function startSession() {
   const iTotalQuestions = document.getElementById("total-questions")
   totalQuestions = parseInt(iTotalQuestions.value)
 
-  const iIntervals = document.getElementById("intervals")
-  intervals = parseInt(iIntervals.value)
+  if (isNaN(totalQuestions)||totalQuestions <= 0){
+    alert('Total pertanyaan harus di atas 0!')
+    showSettings()
+    return
+  }
+
+  const selectedLevel = document.querySelector('input[name="level"]:checked');
 
   cards = []
   for (let i = 0; i < totalQuestions; i++) {
-    let card = await getKanji();
+    let card = await getKanjiByLevel(selectedLevel.value);
     cards.push(card)
   }
   
@@ -93,7 +98,7 @@ function renderCard(card) {
         }
 
         const correctReading = document.getElementById("correct-reading")
-        correctReading.innerText = answer["option"]
+        correctReading.innerText = card["furigana"]
 
         const meaning = document.getElementById("meaning")
         meaning.innerText = card["meaning"]
@@ -111,7 +116,7 @@ function renderCard(card) {
             renderCard(cards[currentIndex])
           }
 
-        }, 500);
+        }, 3000);
       }
     });
 
